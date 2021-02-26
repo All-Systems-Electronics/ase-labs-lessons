@@ -7,7 +7,7 @@ public:
     lastTime_ = millis();
   }
   
-  bool HasElapsed(long unsigned periodMS)
+  bool HasElapsed(long unsigned periodMS) const
   {
     return (millis() - lastTime_) >= periodMS;
   }

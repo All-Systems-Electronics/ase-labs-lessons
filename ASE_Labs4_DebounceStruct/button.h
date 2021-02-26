@@ -34,7 +34,7 @@ void ButtonUpdate(tButton *self)
   }
 }
 
-bool ButtonChangedState(tButton *self)
+bool ButtonChangedState(const tButton *self)
 {
   if (self->state != self->lastState) {
     return true;
@@ -42,12 +42,12 @@ bool ButtonChangedState(tButton *self)
   return false;
 }
 
-bool ButtonPressed(tButton *self)
+bool ButtonPressed(const tButton *self)
 {
   return self->state;
 }
 
-bool ButtonJustPressed(tButton *self)
+bool ButtonJustPressed(const tButton *self)
 {
   if (ButtonChangedState(self)) {
     return self->state;
@@ -55,12 +55,12 @@ bool ButtonJustPressed(tButton *self)
   return false;
 }
 
-bool ButtonReleased(tButton *self)
+bool ButtonReleased(const tButton *self)
 {
   return !self->state;
 }
 
-bool ButtonJustReleased(tButton *self)
+bool ButtonJustReleased(const tButton *self)
 {
   if (ButtonChangedState(self)) {
     return !self->state;
